@@ -1,0 +1,177 @@
+pages/index.js
+// README + Starter Next.js app for Lorecreator
+// ------------------------------------------------
+// This single-file starter contains:
+// 1) A Next.js-compatible React component (default export) that acts as a full landing page structure
+// 2) Inline instructions for how to create the full project, install Tailwind, and push to GitHub
+// 3) A reminder about the uploaded screenshot path for reference: /mnt/data/Captura de pantalla 2025-11-22 175736.png
+
+/*
+HOW TO USE THIS STARTER (copy into your project)
+
+Option A (Quick, recommended):
+1. Create a new local folder and initialize a Next.js app (if you want to test locally):
+   - npx create-next-app@latest lorecreator-web
+   - cd lorecreator-web
+
+2. Install Tailwind and dependencies (optional but recommended):
+   - npm install -D tailwindcss postcss autoprefixer
+   - npx tailwindcss init -p
+   - configure tailwind.config.js and add Tailwind directives to globals.css
+
+3. Replace pages/index.js (or app/page.js for app router) with the component code below.
+4. Commit changes and push to your GitHub repo `lorecreator-web`:
+   - git add .
+   - git commit -m "Add Lorecreator starter site"
+   - git push origin main
+
+5. Vercel will automatically detect the repo and deploy.
+
+Option B (No local install — upload files directly to GitHub via web UI):
+1. In GitHub, go to your repo -> Add file -> Create new file
+2. Create the folder structure and files shown in the file header comments (e.g., pages/index.js, styles/globals.css)
+3. Paste the code below into pages/index.js and create the CSS files as instructed
+4. Commit to main and let Vercel deploy
+
+NOTE: The screenshot you shared is available inside the workspace at:
+/mnt/data/Captura de pantalla 2025-11-22 175736.png
+Use it for reference when adjusting layout or colors.
+*/
+
+import React from 'react';
+
+// This component is meant for Next.js pages/index.js or app/page.js (adapt if needed)
+export default function Home() {
+  return (
+    <main style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif', lineHeight: 1.6}}>
+      {/* HERO */}
+      <section style={{padding: '80px 16px', background: 'linear-gradient(180deg,#0f172a 0%, #071130 100%)', color: 'white'}}>
+        <div style={{maxWidth: 1100, margin: '0 auto', display: 'flex', gap: 32, alignItems: 'center'}}>
+          <div style={{flex: 1}}>
+            <h1 style={{fontSize: 44, margin: 0, fontWeight: 700}}>Lorecreator — Edición de video profesional</h1>
+            <p style={{fontSize: 18, marginTop: 18, color: '#d1d5db'}}>Transformamos ideas en historias visuales que conectan y venden. Cursos, servicios y portafolio.</p>
+            <div style={{marginTop: 22, display: 'flex', gap: 12}}>
+              <a href="/curso" style={{background: 'linear-gradient(90deg,#7c3aed,#3b82f6)', color: 'white', padding: '12px 18px', borderRadius: 10, textDecoration: 'none', fontWeight: 600}}>Comprar curso</a>
+              <a href="/vsl" style={{background: 'transparent', color: 'white', padding: '12px 18px', borderRadius: 10, border: '1px solid rgba(255,255,255,0.12)', textDecoration: 'none'}}>Ver VSL</a>
+            </div>
+            <div style={{marginTop: 18, color: '#9ca3af'}}>Clientes: pequeñas marcas, músicos y creadores independientes.</div>
+          </div>
+
+          <div style={{width: 420, borderRadius: 12, overflow: 'hidden', background: '#000'}}>
+            {/* Poster image placeholder - replace with optimized webp/avif */}
+            <img src="/hero-poster.webp" alt="Lorecreator hero" style={{width: '100%', height: '100%', display: 'block', objectFit: 'cover'}} />
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section style={{padding: '56px 16px'}}>
+        <div style={{maxWidth: 1100, margin: '0 auto'}}>
+          <h2 style={{fontSize: 28, marginBottom: 18}}>Servicios</h2>
+          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: 18}}>
+            <div style={{padding: 20, borderRadius: 12, boxShadow: '0 6px 18px rgba(2,6,23,0.06)'}}>
+              <h3 style={{marginTop: 0}}>Edición para redes</h3>
+              <p style={{marginBottom: 0}}>Formatos verticales y 16:9 optimizados para engagement y retención.</p>
+            </div>
+            <div style={{padding: 20, borderRadius: 12, boxShadow: '0 6px 18px rgba(2,6,23,0.06)'}}>
+              <h3 style={{marginTop: 0}}>Edición documental y corporativa</h3>
+              <p style={{marginBottom: 0}}>Narrativa, corrección de color y ritmo profesional.</p>
+            </div>
+            <div style={{padding: 20, borderRadius: 12, boxShadow: '0 6px 18px rgba(2,6,23,0.06)'}}>
+              <h3 style={{marginTop: 0}}>Cursos y VSL</h3>
+              <p style={{marginBottom: 0}}>Producción del VSL, edición y montaje para convertir espectadores en estudiantes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PORTFOLIO */}
+      <section style={{padding: '56px 16px', background: '#f8fafc'}}>
+        <div style={{maxWidth: 1100, margin: '0 auto'}}>
+          <h2 style={{fontSize: 28, marginBottom: 18}}>Portafolio</h2>
+          <p style={{color: '#6b7280'}}>Haz clic en cualquier miniatura para abrir el video.</p>
+          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 14, marginTop: 18}}>
+            {/* Example portfolio cards (replace embed href with Vimeo/Stream links) */}
+            <a href="/video/1" style={{display: 'block', borderRadius: 10, overflow: 'hidden', boxShadow: '0 6px 18px rgba(2,6,23,0.06)'}}>
+              <img src="/thumb1.webp" alt="portfolio 1" style={{width: '100%', height: 160, objectFit: 'cover', display: 'block'}} />
+              <div style={{padding: 12}}>
+                <strong>Video promocional - Banda X</strong>
+                <div style={{color: '#6b7280', fontSize: 14}}>Edición y color grading</div>
+              </div>
+            </a>
+
+            <a href="/video/2" style={{display: 'block', borderRadius: 10, overflow: 'hidden', boxShadow: '0 6px 18px rgba(2,6,23,0.06)'}}>
+              <img src="/thumb2.webp" alt="portfolio 2" style={{width: '100%', height: 160, objectFit: 'cover', display: 'block'}} />
+              <div style={{padding: 12}}>
+                <strong>Clip corporativo - Marca Y</strong>
+                <div style={{color: '#6b7280', fontSize: 14}}>Storytelling y montaje</div>
+              </div>
+            </a>
+
+            <a href="/video/3" style={{display: 'block', borderRadius: 10, overflow: 'hidden', boxShadow: '0 6px 18px rgba(2,6,23,0.06)'}}>
+              <img src="/thumb3.webp" alt="portfolio 3" style={{width: '100%', height: 160, objectFit: 'cover', display: 'block'}} />
+              <div style={{padding: 12}}>
+                <strong>VSL - Curso de fotografía</strong>
+                <div style={{color: '#6b7280', fontSize: 14}}>Edición y ritmo de conversión</div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section style={{padding: '56px 16px'}}>
+        <div style={{maxWidth: 1100, margin: '0 auto'}}>
+          <h2 style={{fontSize: 28, marginBottom: 18}}>Testimonios</h2>
+          <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14}}>
+            <blockquote style={{padding: 18, borderRadius: 12, background: '#fff', boxShadow: '0 6px 18px rgba(2,6,23,0.03)'}}>
+              "La edición de Lorecreator llevó nuestro clip al siguiente nivel. Profesional y rápido."
+              <div style={{marginTop: 8, color: '#6b7280'}}>— Cliente A</div>
+            </blockquote>
+
+            <blockquote style={{padding: 18, borderRadius: 12, background: '#fff', boxShadow: '0 6px 18px rgba(2,6,23,0.03)'}}>
+              "El curso es claro y la VSL convirtió muchas ventas. 100% recomendado."
+              <div style={{marginTop: 8, color: '#6b7280'}}>— Cliente B</div>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* VSL / Course call-to-action */}
+      <section style={{padding: '56px 16px', background: 'linear-gradient(180deg,#ffffff 0%, #f1f5f9 100%)'}}>
+        <div style={{maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 380px', gap: 24}}>
+          <div>
+            <h2 style={{fontSize: 28}}>Video de ventas (VSL)</h2>
+            <p style={{color: '#6b7280'}}>Presenta el VSL aquí — vídeo principal con botón de compra hacia Hotmart.</p>
+            <div style={{marginTop: 14}}>
+              {/* Embed placeholder (use Vimeo or Cloudflare Stream) */}
+              <div style={{background: '#000', height: 240, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white'}}>Player placeholder</div>
+            </div>
+          </div>
+
+          <aside style={{padding: 20, borderRadius: 12, background: '#ffffff', boxShadow: '0 6px 18px rgba(2,6,23,0.04)'}}>
+            <h3 style={{marginTop: 0}}>Comprar curso</h3>
+            <p style={{color: '#6b7280'}}>Acceso a lecciones, recursos y comunidad.</p>
+            <a href="#" style={{display: 'inline-block', marginTop: 12, padding: '12px 16px', background: 'linear-gradient(90deg,#7c3aed,#3b82f6)', color: 'white', borderRadius: 8, textDecoration: 'none'}}>Ir a Hotmart</a>
+          </aside>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <footer style={{padding: '36px 16px', background: '#0b1220', color: '#cbd5e1'}}>
+        <div style={{maxWidth: 1100, margin: '0 auto', display: 'flex', justifyContent: 'space-between', gap: 20}}>
+          <div>
+            <strong>Lorecreator</strong>
+            <div style={{marginTop: 8}}>Editora de video — contacto: lorecreator@example.com</div>
+          </div>
+
+          <div>
+            <div>Redes</div>
+            <div style={{marginTop: 8}}>Instagram • YouTube • WhatsApp</div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  );
+}
